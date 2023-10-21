@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Transmissão ao vivo</title>
+</head>
+<body>
+  <video id="video" width="640" height="480" controls></video>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs/7.15.3/video.min.js"></script>
+  <script>
+    var video = document.getElementById("video");
+
+    // Carrega o player do SRS
+    var player = videojs("video", {
+      src: "http://localhost:8080/live/livestream.flv",
+      playbackRates: [0.5, 1, 1.5, 2],
+    });
+
+    // Inicia a reprodução do vídeo
+    player.play();
+  </script>
+</body>
+</html>
